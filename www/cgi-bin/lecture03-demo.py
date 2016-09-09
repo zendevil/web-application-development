@@ -8,6 +8,7 @@
 #    b. not specifying a credit card number
 #    c. choosing 0 or 1 toppings
 #    d. probably other things.
+#  I will leave it as an exercise for the interested student to fix these errors.
 
 import cgitb
 import cgi
