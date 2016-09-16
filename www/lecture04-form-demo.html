@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Form Demo (HTML)</title>
+  </head>
+  <body>
+
+  <h1>Super Fabulous Pizza Ordering System</h1>
+
+  <form method="get" action="/cgi-bin/lecture04-pizza.py">
+    Name: <input type="text" name="name"/><BR/>
+    Size:
+    <select name="pizza_size">
+      <option value="small">Small</option>
+      <option value="medium">Medium</option>
+      <option value="large">Large</option>
+      <option value="sheet">Sheet</option>
+    </select>
+    <BR/>
+    Toppings:<BR/>
+    <input type="checkbox" name="pizza_topping" value="pepperoni">Pepperoni<BR>
+    <input type="checkbox" name="pizza_topping" value="sausage">Sausage<BR>
+    <input type="checkbox" name="pizza_topping" value="ham">Ham<BR>
+    <input type="checkbox" name="pizza_topping" value="all the meats">All The Meats
+    <BR/>
+    Crust Type:
+    <select name="pizza_crust_type">
+      <option value="thin">Thin</option>
+      <option value="thick">Thick</option>
+      <option value="wood fired">Wood Fired</option>
+    </select>
+    <BR/>
+    Credit Card Number: <input type="password" name="credit_card_number"/><BR/>
+    Phone Number: <input type="text" name="phone_number"/><BR/>
+    <input type="submit" value="Submit Order"/>
+  </form>
+
+  </body>
+</html>
