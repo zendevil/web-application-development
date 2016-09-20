@@ -13,3 +13,7 @@
 print 'Content-Type: text/html'
 print 'Set-Cookie: whatever=buffy_is_awesome'
 print
+print "<html>"
+print "<head><title>Simple Cookie Test</title></head>"
+print "<body>Simple cookie sent!</body>"
+print "</html>"
