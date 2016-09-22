@@ -50,8 +50,9 @@ else:
     else:
         # this is some other cookie and we didn't get what we expected.  print an error message
         message += "<h2>Sorry, I don't understand your cookie.  Looking for 'current_time' but found: </h2>"
-        # and while we're at it print the contents of the cookie
-        for key in cookie:
-            message += key + ":" + cookie[key].value + "<BR/>"
+        
+    # and while we're at it print the contents of the cookie
+    for key in cookie:
+        message += key + ":" + cookie[key].value + "<BR/>"
 
     print_html(message)
