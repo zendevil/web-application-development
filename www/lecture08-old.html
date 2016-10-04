@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+        #error {
+            color: red
+        }
+    </style>
+
+    <title>Lecture 08 Old School Demo</title>
+</head>
+<body>
+
+    <h1>Pizza Order Tracker!</h1>
+
+    <p>Please enter a name to find any outstanding orders for that customer.</p>
+
+    <form method="post" action="/cgi-bin/lecture08-old.py">
+        Name: <input type="text" name="customer_name"/>
+        <input type="submit" value="Get Pizza Orders!"/>
+    </form>
+</body>
+</html>
