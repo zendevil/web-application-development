@@ -3,6 +3,7 @@
  *
  * Lecture 08 JavaScript/jQuery/Ajax demo
  */
+
 $(document).ready(function() {
     console.log("Lecture 08 script loaded...");
 
@@ -46,12 +47,13 @@ var get_status = function() {
             customer_name: $name
         },
 
-        type: "POST",                  // GET or POST
+        type: "GET",                  // GET or POST
 
         dataType: "json",             // json format
 
         success: function( data ) {   // function to execute upon a successful request
             console.log("success!");
+            console.log(data)
             $('#error').empty();
             $('#name').html('Name: ' + data.name);
             $('#size').html('Size: ' + data.size);
@@ -71,10 +73,18 @@ var get_status = function() {
     });
 };
 
+var handle_error = function(request) {
+    console.log("error!");
+        console.log(request)
+        $('.order_data').empty();
+        $('#error').html("<p>There has been an error fetching the order for " + $name +
+            ", are you sure that this person has an outstanding order?</p>");
+    };
+
 var get_status_simple = function() {
     var $name = $('#customer_name').val();
     $.getJSON(
         "cgi-bin/lecture08.py",
         { customer_name: $name },
-        status_returned);
+        status_returned).fail(handle_error);
 };
