@@ -21,7 +21,7 @@ cursor = conn.cursor()
 
 data = {} # dictionary to store the response name/value pairs before JSON conversion
 
-for order in cursor.execute("SELECT * FROM pizza_orders WHERE name=?" + [customer_name]):
+for order in cursor.execute("SELECT * FROM pizza_orders WHERE name=?", [customer_name]):
 
     data['name'] = order[0]
     data['size'] = order[1]

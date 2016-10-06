@@ -41,7 +41,7 @@ var get_status = function() {
     //  success: a function to execute if the request is successful
     //  error: a function to execute if the request fails for any reason
     $.ajax({
-        url: 'cgi-bin/lecture08.py',  // lecture 8 script to query the pizza database
+        url: '../cgi-bin/lecture08.py',  // lecture 8 script to query the pizza database
 
         data: {                       // the data to send
             customer_name: $name
@@ -53,7 +53,7 @@ var get_status = function() {
 
         success: function( data ) {   // function to execute upon a successful request
             console.log("success!");
-            console.log(data)
+            console.log(data);
             $('#error').empty();
             $('#name').html('Name: ' + data.name);
             $('#size').html('Size: ' + data.size);
@@ -65,7 +65,7 @@ var get_status = function() {
 
         error: function(request) {   // function to call when the request fails
             console.log("error!");
-            console.log(request)
+            console.log(request);
             $('.order_data').empty();
             $('#error').html("<p>There has been an error fetching the order for " + $name +
                 ", are you sure that this person has an outstanding order?</p>");
@@ -75,7 +75,7 @@ var get_status = function() {
 
 var handle_error = function(request) {
     console.log("error!");
-        console.log(request)
+        console.log(request);
         $('.order_data').empty();
         $('#error').html("<p>There has been an error fetching the order for " + $name +
             ", are you sure that this person has an outstanding order?</p>");
@@ -84,7 +84,7 @@ var handle_error = function(request) {
 var get_status_simple = function() {
     var $name = $('#customer_name').val();
     $.getJSON(
-        "cgi-bin/lecture08.py",
+        "../cgi-bin/lecture08.py",
         { customer_name: $name },
         status_returned).fail(handle_error);
 };
