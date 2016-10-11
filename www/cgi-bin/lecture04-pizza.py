@@ -12,7 +12,6 @@
 
 import cgitb
 import cgi
-import datetime
 import sqlite3
 
 cgitb.enable()
