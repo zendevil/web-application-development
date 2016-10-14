@@ -10,7 +10,7 @@ def authenticate(username, password):
     cursor = conn.cursor()
 
     results = conn.execute('SELECT * FROM users WHERE username=?', [username])
-    if results.arraysize == 1:
+    if results.rowcount == 1: # used to be arraysize!  this is wrong!  Thanks, Jessica!
         row = results.next()
         encrypted = row[1]
         salt = row[2]
