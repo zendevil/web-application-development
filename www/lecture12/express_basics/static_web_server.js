@@ -12,7 +12,22 @@ var express = require('express'),
 // this app will look for any file requested in the a 'public'
 // subdirectory under the current directory and, if it's there,
 // return it.
-app.use(express.static(__dirname + '/public'));
+app.use('/', express.static(__dirname + '/public'));
 
-app.listen(8080);
+var port = 8080;
+app.listen(port, function() {
+   console.log("Express application listening on port " + port);
+});
+
+// sets up a faux admin server on port 8088.  note that for a real
+// admin server, https should be enabled.
+var admin_port = 8088;
+admin = express();
+admin.use('/', express.static(__dirname + '/admin'));
+admin.listen(admin_port, function() {
+   console.log("Faux admin listening on port " + admin_port);
+});
+
+
+
 
