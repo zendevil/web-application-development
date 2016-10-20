@@ -12,12 +12,18 @@ var express = require('express'),
 // this app will look for any file requested in the a 'public'
 // subdirectory under the current directory and, if it's there,
 // return it.
+// not that the '/' can be left off if the path is root
 app.use('/', express.static(__dirname + '/public'));
+// multiple calls to use can set up redirection to the same or different
+// locations in the file system.
+app.use('/example', express.static(__dirname + '/public'));
 
 var port = 8080;
 app.listen(port, function() {
    console.log("Express application listening on port " + port);
 });
+
+
 
 // sets up a faux admin server on port 8088.  note that for a real
 // admin server, https should be enabled.
